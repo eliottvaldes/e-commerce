@@ -77,13 +77,14 @@
                     }
                     System.out.println("El parametro que se asigno es: " + para);
 
-                    System.out.println("Si se va a agregar a favoritos");
+                    System.out.println("Si se va a agregar a CARRITO");
                     Statement set = con.createStatement();
 
                     int art = Integer.parseInt(request.getParameter("art"));
+                    int quantity = Integer.parseInt(request.getParameter("cantidad"));
 
-                    String sql = "insert into carrito.cart (id_user, id_arti) "
-                            + "values (" + para + "," + art + ")";
+                    String sql = "insert into carrito.cart (id_user, id_arti, count_arti) "
+                            + "values (" + para + "," + art + "," + quantity + ")";
                     System.out.println("El usuario que agrego a carrito fue: " + usuario);
                     System.out.println("Los datos fueron: " + sql);
                     int val = set.executeUpdate(sql);
@@ -145,10 +146,10 @@
                             <a class="nav-link" href="products.jsp"><i class="fa fa-tags"></i> Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fa fa-users"></i> Acerca de nosotros</a>
+                            <a class="nav-link" href="about.jsp"><i class="fa fa-users"></i> Acerca de nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
+                            <a class="nav-link" href="contact.jsp" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
                         </li>
                     </ul>
                 </div>
@@ -212,7 +213,7 @@
                 <div class="col-md-12">
                     <div class="footer-menu">
                         <ul>
-                            <li><a href="indexwl.html">Inicio</a></li>
+                            <li><a href="indexwl.jsp">Inicio</a></li>
                             <li><a href="help.jsp">Ayuda</a></li>
                             <li><a href="politics.jsp"> <span>Politicas de privacidad</a> </li>
                             <li><a href="contact.jsp">Contáctanos</a></li>

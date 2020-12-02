@@ -77,10 +77,10 @@
                             <a class="nav-link" href="products.jsp"><i class="fa fa-tags"></i> Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fa fa-users"></i> Acerca de nosotros</a>
+                            <a class="nav-link" href="about.jsp"><i class="fa fa-users"></i> Acerca de nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
+                            <a class="nav-link" href="contact.jsp" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
                         </li>
                     </ul>
                 </div>
@@ -197,7 +197,10 @@
                         </td>                        
                         <td  class="align-middle">
                             <!--Con el parametro ?cod="" se le pasa el dato de la fila y la columna que se va a querer eliminar-->
-                            <a  class="space" href="EliminarFav.jsp?coddel=<%= rs2.getString(1)%> ">Eliminar Favorito</a>
+                            <form method="POST" action="EliminarFav.jsp">
+                                <input type="hidden" name="coddel" id="coddel" value="<%= rs2.getString(1)%>">
+                                <input type="submit" class="btn btn-danger" value="Eliminar de favoritos">                            
+                            </form>                            
                         </td>
                     </tr>
 
@@ -218,7 +221,10 @@
                         </td>
                         <td  class="align-middle">
                             <!--Con el parametro ?cod="" se le pasa el dato de la fila y la columna que se va a querer eliminar-->
-                            <a class="space" href="EliminarFav.jsp?coddel=<%= rs2.getString(1)%> ">Eliminar Favorito</a>
+                            <form method="POST" action="EliminarFav.jsp">
+                                <input type="hidden" name="coddel" id="coddel" value="<%= rs2.getString(1)%>">
+                                <input type="submit" class="btn btn-danger" value="Eliminar de favoritos">                            
+                            </form>
                         </td>
                     </tr>
 
@@ -284,7 +290,7 @@
                     <div class="col-md-12">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="indexwl.html">Inicio</a></li>
+                                <li><a href="indexwl.jsp">Inicio</a></li>
                                 <li><a href="help.jsp">Ayuda</a></li>
                                 <li><a href="politics.jsp"> <span>Politicas de privacidad</a> </li>
                                 <li><a href="contact.jsp">Contáctanos</a></li>

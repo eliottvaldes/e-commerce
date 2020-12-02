@@ -77,10 +77,10 @@
                             <a class="nav-link" href="products.jsp"><i class="fa fa-tags"></i> Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fa fa-users"></i> Acerca de nosotros</a>
+                            <a class="nav-link" href="about.jsp"><i class="fa fa-users"></i> Acerca de nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
+                            <a class="nav-link" href="contact.jsp" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
                         </li>
                     </ul>
                 </div>
@@ -108,11 +108,12 @@
                 Statement st2 = null;
                 ResultSet rs2 = null;
                 Statement st3 = null;
-                ResultSet rs3 = null;
+                ResultSet rs3 = null;                
                 String hidetable = "";
                 String hidemsg = "";
                 int type = 0;
                 int para = 0;
+                int count=0;
                 try {
                     String url2 = "jdbc:mysql://localhost:3306/carrito?user=root&password=n0m3l0";
                     int i = 1;
@@ -125,13 +126,15 @@
                     }
                     //para obtener datos de producto
                     st2 = con2.createStatement();
-                    String g = "select distinct id_art, nom_art, des_art, prc_art, img_art from carrito.articulo, carrito.cart where id_art=id_arti and id_user=" + para + "";
+                    String g = "select distinct id_art, nom_art, img_art, prc_art, carrito.cart.count_arti, des_art  from carrito.articulo, carrito.cart where id_art=id_arti and id_user=" + para + "";
                     rs2 = st2.executeQuery(g);
 
                     //para ocultar tabla si no hay productos en carrito 
                     st3 = con2.createStatement();
                     String q3 = "SELECT COUNT(*) FROM carrito.cart WHERE id_user =" + para + "";
                     rs3 = st3.executeQuery(q3);
+                    
+                                        
                     while (rs3.next()) {
                         type = rs3.getInt(1);
                         if (type == 0) {
@@ -162,16 +165,16 @@
                     <tbody>                      
                     <thead class="bg-danger text-white">
                     <th width="5%" scope="col">
-                        NOMBRE
+                        PRODUCTO
+                    </th>
+                    <th width="15%" scope="col">
+                        
+                    </th>
+                    <th width="10%" scope="col">
+                        PRECIO UNITARIO
                     </th>
                     <th width="10%" scope="col">
                         CANTIDAD
-                    </th>
-                    <th width="10%" scope="col">
-                        PRECIO
-                    </th>
-                    <th width="20%" scope="col">
-                        IMAGEN
                     </th>
                     <th class="bg-white text-dark" width="15%" scope="col">
                         Delete
@@ -188,16 +191,18 @@
                     <tr>
                         <td  class="align-middle" scope="row"><%= rs2.getString(2)%>    
                         </td>
-                        <td  class="align-middle" scope="row"><%= rs2.getString(3)%>    
-                        </td>
-                        <td  class="align-middle" scope="row"><%= rs2.getString(4)%>    
-                        </td>
                         <td  class="align-middle" scope="row">
-                            <img src=<%=rs2.getString(5)%> alt=<%="Product" + rs2.getString(5)%> width="70%">
+                            <img src=<%=rs2.getString(3)%> alt=<%="Product" + rs2.getString(3)%> width="70%">
+                        </td>
+                        <td  class="align-middle" scope="row">$ <%= rs2.getString(4)%>.00 MXN    
+                        </td>
+                        <td  class="align-middle" scope="row"><%= rs2.getString(5)%>                                
                         </td>                        
                         <td  class="align-middle">
-                            <!--Con el parametro ?cod="" se le pasa el dato de la fila y la columna que se va a querer eliminar-->
-                            <a  class="space" href="EliminarCart.jsp?coddel=<%= rs2.getString(1)%> ">Eliminar de Carrito</a>
+                            <form method="POST" action="EliminarCart.jsp">
+                                <input type="hidden" name="coddel" id="coddel" value="<%= rs2.getString(1)%>">
+                                <input type="submit" class="btn btn-danger btn-block" value="Eliminar de carrito">
+                            </form>
                         </td>
                     </tr>
 
@@ -208,17 +213,20 @@
                     <tr>
                         <td  class="align-middle" scope="row"><%= rs2.getString(2)%>    
                         </td>
-                        <td  class="align-middle" scope="row"><%= rs2.getString(3)%>    
-                        </td>
-                        <td  class="align-middle" scope="row"><%= rs2.getString(4)%>    
-                        </td>
                         <td  class="align-middle" scope="row">
-                            <img src=<%=rs2.getString(5)%> alt=<%="Product" + rs2.getString(5)%> width="70%">
+                            <img src=<%=rs2.getString(3)%> alt=<%="Product" + rs2.getString(3)%> width="70%">
+                        </td>
+                        <td  class="align-middle" scope="row">$ <%= rs2.getString(4)%>.00 MXN    
+                        </td>
+                        <td  class="align-middle" scope="row"><%= rs2.getString(5)%>                                                            
                         </td>
 
                         <td  class="align-middle">
                             <!--Con el parametro ?cod="" se le pasa el dato de la fila y la columna que se va a querer eliminar-->
-                            <a class="space" href="EliminarCart.jsp?coddel=<%= rs2.getString(1)%> ">Eliminar de Carrito</a>
+                            <form method="POST" action="EliminarCart.jsp">
+                                <input type="hidden" name="coddel" id="coddel" value="<%= rs2.getString(1)%>">
+                                <input type="submit" class="btn btn-danger" value="Eliminar de carrito">                            
+                            </form>
                         </td>
                     </tr>
 
@@ -231,7 +239,7 @@
                             rs2.close();
                             st2.close();
                             rs3.close();
-                            st3.close();
+                            st3.close();                            
                             con2.close();
                         } catch (Exception e) {
                             System.out.println("Si aqui no sirve sout T_T");
@@ -282,7 +290,7 @@
                     <div class="col-md-12">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="indexwl.html">Inicio</a></li>
+                                <li><a href="indexwl.jsp">Inicio</a></li>
                                 <li><a href="help.jsp">Ayuda</a></li>
                                 <li><a href="politics.jsp"> <span>Politicas de privacidad</a> </li>
                                 <li><a href="contact.jsp">Contáctanos</a></li>

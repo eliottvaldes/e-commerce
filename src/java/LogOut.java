@@ -18,18 +18,24 @@ import javax.servlet.http.HttpSession;
  */
 public class LogOut extends HttpServlet {
 
-  
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            response.setContentType("text/html");  
-            PrintWriter out=response.getWriter();                          
-            request.getRequestDispatcher("index.html").include(request, response);                
-            HttpSession session=request.getSession();  
-            session.invalidate();                
-            out.print("Has salido exitosamente de tu sesión!");                
-            out.close();  
-            request.getRequestDispatcher("index.html").forward(request, response);
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.print(""
+        + "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n"
+        + "  <strong>¡Sesión cerrada exitosamente!</strong> Esperamos verte pronto.\n"
+        + "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n"
+        + "    <span aria-hidden=\"true\">&times;</span>\n"
+        + "  </button>\n"
+        + "</div>"
+        + "");
+        request.getRequestDispatcher("index.html").include(request, response);
+        HttpSession session = request.getSession();
+        session.invalidate();        
+        out.close();
+        request.getRequestDispatcher("index.html").forward(request, response);
     }
 
     @Override

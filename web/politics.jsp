@@ -29,7 +29,7 @@
             if (sesionOk.getAttribute("usuario") == null) {
                 //Si la sesión no es valida
         %>
-        <jsp:forward page="login.jsp">
+        <jsp:forward page="politics.html">
             <jsp:param name="error" value="Es obligatorio identificarse"/>
         </jsp:forward>
         <%
@@ -74,10 +74,10 @@
                             <a class="nav-link" href="products.jsp"><i class="fa fa-tags"></i> Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html"><i class="fa fa-users"></i> Acerca de nosotros</a>
+                            <a class="nav-link" href="about.jsp"><i class="fa fa-users"></i> Acerca de nosotros</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="contact.html"><i class="fa fa-envelope"></i> Contáctanos
+                            <a class="nav-link" href="contact.jsp"><i class="fa fa-envelope"></i> Contáctanos
                                 <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
@@ -228,7 +228,7 @@
         <script src="assets/js/isotope.js"></script>
         <script src="assets/js/flex-slider.js"></script>
 
-
+        
 
 
     </body>

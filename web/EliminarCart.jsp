@@ -71,7 +71,7 @@
 
             } catch (Exception e) {
                 System.out.println("2");
-                System.out.println("No se agrego a favoritos");
+                System.out.println("No se elimino de carrito");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
             }

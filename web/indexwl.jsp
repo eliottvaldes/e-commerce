@@ -80,10 +80,10 @@
               <a class="nav-link" href="products.jsp"><i class="fa fa-tags"></i> Productos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html"><i class="fa fa-users"></i> Acerca de nosotros</a>
+              <a class="nav-link" href="about.jsp"><i class="fa fa-users"></i> Acerca de nosotros</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
+              <a class="nav-link" href="contact.jsp" id="ii"><i class="fa fa-envelope"></i> Contáctanos</a>
             </li>
           </ul>
         </div>

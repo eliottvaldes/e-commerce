@@ -24,12 +24,14 @@ public class LogOut extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.print(""
-        + "<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n"
+        + "<div style=\"background-color:black; margin-bottom:-17px;\">\n"
+        + " <div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">\n"
         + "  <strong>¡Sesión cerrada exitosamente!</strong> Esperamos verte pronto.\n"
         + "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n"
         + "    <span aria-hidden=\"true\">&times;</span>\n"
         + "  </button>\n"
-        + "</div>"
+        + " </div>\n"
+        + "</div>\n"
         + "");
         request.getRequestDispatcher("index.html").include(request, response);
         HttpSession session = request.getSession();

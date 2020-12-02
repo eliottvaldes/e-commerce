@@ -75,17 +75,17 @@
                     while (rs.next()) {
                         para = rs.getInt(1);
                     }
-                    System.out.println("El parametro que se asigno es: " + para);
+                    //System.out.println("El parametro que se asigno es: " + para);
 
-                    System.out.println("Si se va a agregar a favoritos");
+                    //System.out.println("Si se va a agregar a favoritos");
                     Statement set = con.createStatement();
 
                     int art = Integer.parseInt(request.getParameter("art"));
 
                     String sql = "insert into carrito.favoritos (id_usuario, id_articulo) "
                             + "values (" + para + "," + art + ")";
-                    System.out.println("El usuario que agrego a favoritos fue: " + usuario);
-                    System.out.println("Los datos fueron: " + sql);
+                    //System.out.println("El usuario que agrego a favoritos fue: " + usuario);
+                    //System.out.println("Los datos fueron: " + sql);
                     int val = set.executeUpdate(sql);
 
                     request.getRequestDispatcher("favoritos.jsp").forward(request, response);

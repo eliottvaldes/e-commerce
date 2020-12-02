@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="java.io.PrintWriter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -57,8 +58,21 @@
 
                     String sql = "delete from `cart` where (`id_arti` = " + id + ")";
                     int val = set.executeUpdate(sql);
-                    request.getRequestDispatcher("dis_cart.jsp").forward(request, response);
-
+                    response.setContentType("text/html");
+                    PrintWriter msg = response.getWriter();
+                    msg.print(""
+                    + "<div style=\"background-color:black; margin-bottom:-16.5px;\">\n"
+                    + "  <div class=\"alert alert-danger alert-dismissible fade show text-center mx-5\" role=\"alert\">\n"
+                    + "      <strong>¡Producto eliminado de carrito!</strong>\n"
+                    + "      <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n"
+                    + "       <span aria-hidden=\"true\">&times;</span>\n"
+                    + "      </button>\n"
+                    + "  </div>\n"
+                    + "</div>\n"
+                    + "");                                                                                                             
+                    
+                    request.getRequestDispatcher("dis_cart.jsp").include(request, response);                    
+                    msg.close();
                     con.close();
 
                 } catch (SQLException ex) {
@@ -138,6 +152,7 @@
             <br>
         </div><!-- Fin de products -->
         <br>
+        <h1>ERROR AL ELIMINAR DE CARRITO</h1>
         <br>
     </div><!-- Fin de container -->
     <!-- About Page Ends Here -->

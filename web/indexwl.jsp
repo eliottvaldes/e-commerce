@@ -54,7 +54,7 @@
                 <li class="float-left"><h5>¡Bienvenido <%=usuario%>!</h5> </li>              
                 <li><a role="button" class="button producto" href="favoritos.jsp"> <i class="fa fa-heart"></i></a></li> 
                 <li><a role="button" class="button producto" href="dis_cart.jsp"> <i class="fa fa-shopping-cart"></i></a></li> 
-                <li><a href="LogOut">Salir<i class="fa fa-sign-out"></i></a>
+                <li ><a href="LogOut" onclick="localStorage.clear();" >  Salir  <i class="fa fa-sign-out"></i></a></li>
                 </li>
             </ul>
           </div>

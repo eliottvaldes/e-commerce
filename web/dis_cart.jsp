@@ -51,9 +51,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul>
-                            <li class="cart"><a role="button" class="button producto" href="favoritos.jsp"> <i class="fa fa-heart"></i></a></li> 
-                            <li class="cart"><a role="button" class="button producto" href="dis_cart.jsp"> <i class="fa fa-shopping-cart"></i></a></li> 
-                            <li ><a href="LogOut">  Salir  <i class="fa fa-sign-out"></i></a></li>
+                            <li><a role="button" class="button producto" href="favoritos.jsp"> <i class="fa fa-heart"></i></a></li> 
+                            <li><a role="button" class="button producto" href="dis_cart.jsp"> <i class="fa fa-shopping-cart"></i></a></li> 
+                            <li ><a href="LogOut" onclick="localStorage.clear();" >  Salir  <i class="fa fa-sign-out"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -333,14 +333,11 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/owl.js"></script>
     <script src="assets/js/isotope.js"></script>
     <script src="assets/js/flex-slider.js"></script>
-
-
 
 </body>
 </html>

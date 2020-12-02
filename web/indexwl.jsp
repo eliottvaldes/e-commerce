@@ -249,10 +249,10 @@
           <div class="col-md-12">
             <div class="footer-menu">
               <ul>
-                <li><a href="indexwl.html">Inicio</a></li>
-                <li><a href="help.html"> Ayuda <i class="fa fa-question "></i></a></li>
+                <li><a href="indexwl.jsp">Inicio</a></li>
+                <li><a href="help.jsp"> Ayuda <i class="fa fa-question "></i></a></li>
             <li><a data-toggle="modal" data-target="#staticBackdrop"> <span>Politicas de privacidad</span></a> </li>
-                <li><a href="contact.html">Contáctanos</a></li>
+                <li><a href="contact.jsp">Contáctanos</a></li>
               </ul>
             </div>
           </div>

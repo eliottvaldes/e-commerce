@@ -43,7 +43,7 @@
                 usuario = (String) sesionOk.getAttribute("usuario");
             }
         %>
-        
+
         <div id="pre-header" class="login-menu">
             <div class="container">
                 <div class="row">
@@ -155,13 +155,12 @@
                     <div class="col-md-12">
                         <div class="footer-menu">
                             <ul>
-                                <li><a href="indexwl.jsp">Inicio</a></li>
-                                <li><a href="help.html">Ayuda</a></li>
-                                <li><a href="politics.html"> <span>Politicas de privacidad</a> </li>
-                                <li><a href="contact.html">Contáctanos</a></li>
+                                <li><a href="indexwl.html">Inicio</a></li>
+                                <li><a href="help.jsp">Ayuda</a></li>
+                                <li><a href="politics.jsp"> <span>Politicas de privacidad</a> </li>
+                                <li><a href="contact.jsp">Contáctanos</a></li>
                             </ul>
-                        </div>
-                    </div>
+                        </div>                    </div>
                     <div class="col-md-12">
                         <div class="social-icons">
                             <ul>

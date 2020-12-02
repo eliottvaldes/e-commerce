@@ -219,9 +219,9 @@ https://www.tooplate.com/view/2114-pixie
         <div class="footer-menu">
           <ul>
             <li><a href="indexwl.jsp">Inicio</a></li>
-            <li><a href="help.html">Ayuda</a></li>
-            <li><a href="politics.html"> <span>Politicas de privacidad</a> </li>
-            <li><a href="contact.html">Contáctanos</a></li>
+            <li><a href="help.jsp">Ayuda</a></li>
+            <li><a href="politics.jsp"> <span>Politicas de privacidad</a> </li>
+            <li><a href="contact.jsp">Contáctanos</a></li>
           </ul>
         </div>
       </div>

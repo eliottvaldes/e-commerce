@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+        <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="192x192">
+      <title>The World of Creations México - Tienda Online</title> 
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+      <!-- https://fonts.google.com/specimen/Open+Sans -->
+      <link rel="stylesheet" href="assets/css_crud/fontawesome.min.css">
+      <!-- https://fontawesome.com/ -->
+      <link rel="stylesheet" href="assets/css_crud/fullcalendar.min.css">
+      <!-- https://fullcalendar.io/ -->
+      <link rel="stylesheet" href="assets/css_crud/bootstrap.min.css">
+      <!-- https://getbootstrap.com/ -->
+      <link rel="stylesheet" href="assets/css_crud//tooplate.css">
+      </head>
+    <body class="bg03">
+        <div class="container">
+            <div class="row tm-mt-big ">
+                <div class="col-12 mx-auto tm-login-col">
+                    <div class="bg-white tm-block " >
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img src="assets\images\load.gif" alt="cargando" width="60%" height="95%" class="rounded-circle">                                
+                            </div>
+                            <div class="col-12 text-center">                                
+                                <h2 class="tm-block-title mt-3">Registar nuevo usuario</h2>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <form action="RegistroUsuario" method="post" class="tm-login-form">
+                                    <div class="input-group">
+                                        <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nombre(s): </label>
+                                        <input name="name" placeholder="Nombre(s)" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="name" value="" required>
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <label for="appat" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Apellido Paterno: </label>
+                                        <input name="appat" placeholder="Apellido Paterno" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="appat" value="" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="apmat" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Apellido Materno: </label>
+                                        <input name="apmat" placeholder="Apellido Materno" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="apmat" value="" required>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nombre de Usuario: </label>
+                                        <input name="username" placeholder="Nombre de usuario" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" value="" required>
+                                    </div>
+                                    <div class="input-group mt-3">
+                                        <label for="email" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Email:  </label>
+                                        <input name="email" type="text" placeholder="Email" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="email" value="" required>
+                                    </div>
+                                    <div class="input-group mt-3">
+                                        <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Contraseña: </label>
+                                        <input name="password" type="password" placeholder="Contraseña" class="form-control validate" id="password" value="" required>
+                                    </div>
+                                    <div class="input-group mt-3">
+                                        <label for="password2" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Repita la contraseña: </label>
+                                        <input name="password2" type="password" placeholder="Contraseña" class="form-control validate" id="password2" value="" required>
+                                    </div><br>
+                                    <div class="input-group mt-3">
+                                        <button type="submit" class="btn btn-success d-inline-block mx-auto">Aceptar</button>
+                                    </div><br>
+                                    <div class="input-group mt-3">
+                                        <a href="login.jsp">Iniciar sesión con cuenta axistente</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="row tm-mt-big">
+                <div class="col-12 font-weight-light text-center">
+                    <p class="d-inline-block tm-bg-black text-white py-2 px-4 text-white tm-footer-link">
+                    Copyright &copy; 2020 The World Of Creations
+                    </p>
+                </div>
+            </footer>
+        </div>    
+    </body>
+</html>

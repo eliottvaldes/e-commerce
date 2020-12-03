@@ -37,32 +37,32 @@
                                 <form action="RegistroUsuario" method="post" class="tm-login-form">
                                     <div class="input-group">
                                         <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nombre(s): </label>
-                                        <input name="name" placeholder="Nombre(s)" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="name" value="" required>
+                                        <input name="name" placeholder="Nombre(s)" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="name" minlength="4" maxlength="30" required>
                                     </div>
                                     <br>
                                     <div class="input-group">
                                         <label for="appat" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Apellido Paterno: </label>
-                                        <input name="appat" placeholder="Apellido Paterno" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="appat" value="" required>
+                                        <input name="appat" placeholder="Apellido Paterno" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="appat" minlength="4" maxlength="20"required>
                                     </div>
                                     <div class="input-group">
                                         <label for="apmat" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Apellido Materno: </label>
-                                        <input name="apmat" placeholder="Apellido Materno" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="apmat" value="" required>
+                                        <input name="apmat" placeholder="Apellido Materno" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="apmat" minlength="4" maxlength="20" required>
                                     </div>
                                     <div class="input-group">
                                         <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nombre de Usuario: </label>
-                                        <input name="username" placeholder="Nombre de usuario" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" value="" required>
+                                        <input name="username" placeholder="Nombre de usuario" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" minlength="4" maxlength="20" required>
                                     </div>
                                     <div class="input-group mt-3">
                                         <label for="email" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Email:  </label>
-                                        <input name="email" type="text" placeholder="Email" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="email" value="" required>
+                                        <input name="email" type="email" placeholder="Email" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="email"required>
                                     </div>
                                     <div class="input-group mt-3">
                                         <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Contraseña: </label>
-                                        <input name="password" type="password" placeholder="Contraseña" class="form-control validate" id="password" value="" required>
+                                        <input name="password" type="password" placeholder="Contraseña" class="form-control validate" id="password" minlength="8" maxlength="30" required>
                                     </div>
                                     <div class="input-group mt-3">
-                                        <label for="password2" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Repita la contraseña: </label>
-                                        <input name="password2" type="password" placeholder="Contraseña" class="form-control validate" id="password2" value="" required>
+                                        <label for="password2" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Confirmación de contraseña: </label>
+                                        <input name="password2" type="password" placeholder="Contraseña" class="form-control validate" id="password2" minlength="8" maxlength="30" required>
                                     </div><br>
                                     <div class="input-group mt-3">
                                         <button type="submit" class="btn btn-success d-inline-block mx-auto">Aceptar</button>

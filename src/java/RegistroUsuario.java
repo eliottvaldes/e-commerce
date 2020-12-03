@@ -110,11 +110,11 @@ public class RegistroUsuario extends HttpServlet {
                                 + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                     }else{
                         Validacion v = new Validacion();
-                        if(v.validarNombre(name_usr)==false){
+                        if(v.validarName(name_usr)==false){
                             message = "<h2 class=\"tm-block-title mt-3\">Ingresa solo letras en el nombre, no debe ser mayor a 30 caracteres</h2>\n"
                                     + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                         }else{
-                            if( v.validarApellido(appat_usr)==false || v.validarApellido(apmat_usr)==false ){
+                            if( v.validarApellidos(appat_usr)==false || v.validarApellidos(apmat_usr)==false ){
                                 message = "<h2 class=\"tm-block-title mt-3\">Ingresa solo letras en los apellido, no debe ser mayor a 20 caracteres</h2>\n"
                                         + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                             }else{
@@ -122,11 +122,11 @@ public class RegistroUsuario extends HttpServlet {
                                     message = "<h2 class=\"tm-block-title mt-3\">El correo que ingresaste no es valido, no debe ser mayor a 50 caracteres</h2>\n"
                                             + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                                 }else{
-                                    if(v.validarUsuario(user_usr)==false){
+                                    if(v.validarUserName(user_usr)==false){
                                         message = "<h2 class=\"tm-block-title mt-3\">El nombre de usuario que ingresaste no es valido, no debe ser mayor a 20 caracteres</h2>\n"
                                                 + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                                     }else{
-                                        if(v.validarContraseña(pas_usr)==false){
+                                        if(v.validarPass(pas_usr)==false){
                                             message = "<h2 class=\"tm-block-title mt-3\">La contraseña debe tener tener entre 6 y 15 caracteres</h2>\n"
                                                     + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                                         }else{

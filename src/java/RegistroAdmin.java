@@ -103,19 +103,19 @@ public class RegistroAdmin extends HttpServlet {
                         message = "<h1>Ese usuario ya existe en el sistema</h1>\n";
                     }else{
                         Validacion v = new Validacion();
-                        if(v.validarNombre(name_usr)==false){
+                        if(v.validarName(name_usr)==false){
                             message = "<h1>Ingresa solo letras en el nombre, no debe ser mayor a 30 caracteres</h1>\n";
                         }else{
-                            if( v.validarApellido(appat_usr)==false || v.validarApellido(apmat_usr) == false){
+                            if( v.validarApellidos(appat_usr)==false || v.validarApellidos(apmat_usr) == false){
                                 message = "<h1>Ingresa solo letras en los apellidos, no debe ser mayor a 20 caracteres</h1>\n";
                             }else{
                                 if(v.validarEmail(ema_usr)==false){
                                     message = "<h1>El correo que ingresaste no es valido, no debe ser mayor a 50 caracteres</h1>\n";
                                 }else{
-                                    if(v.validarUsuario(user_usr)==false){
+                                    if(v.validarUserName(user_usr)==false){
                                         message = "<h1>El nombre de usuario que ingresaste no es valido, no debe ser mayor a 20 caracteres</h1>\n";
                                     }else{
-                                        if(v.validarContraseña(pas_usr)==false){
+                                        if(v.validarPass(pas_usr)==false){
                                             message = "<h1>La contraseña debe tener tener entre 6 y 15 caracteres</h1>\n";
                                         }else{
                                             System.out.println(id_usr);

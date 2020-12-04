@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -16,10 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Melyz
- */
+
 public class RegistroUsuario extends HttpServlet {
 
     private Connection con;
@@ -130,8 +121,15 @@ public class RegistroUsuario extends HttpServlet {
                                             message = "<h2 class=\"tm-block-title mt-3\">La contraseña debe tener tener entre 6 y 15 caracteres</h2>\n"
                                                     + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                                         }else{
-                                            String q = "insert into usuario values("+id_usr+", '"+name_usr+"', '"+appat_usr+"', '"+apmat_usr+"', '"+user_usr+"', '"+ema_usr+"', '"+pas_usr+"', "+priv_usr+")";
                                             
+                                            String part1 =user_usr.substring(0,4);
+                                            String part2 =pas_usr.substring(0,4);
+                                            String key = part1+part2+part1+part2;
+                                            System.out.println(key);
+                                            System.out.println("La longitud de la clave para encreptar es: "+key.length());                                            
+                                            String passwordEncrypted = "AES_ENCRYPT("+pas_usr+",'"+key+"')";
+                                            
+                                            String q = "insert into usuario values("+id_usr+", '"+name_usr+"', '"+appat_usr+"', '"+apmat_usr+"', '"+user_usr+"', '"+ema_usr+"', '"+passwordEncrypted+"', "+priv_usr+")";                                            
                                             
                                             set.executeUpdate(q);
                                             message = "<h2 class=\"tm-block-title mt-3\">¡Registro completado!</h2>\n"

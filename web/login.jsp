@@ -39,11 +39,11 @@
                                     
                                     <div class="input-group">
                                         <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Usuario: </label>
-                                        <input name="username" placeholder="Usuario" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" value="" required>
+                                        <input name="username" placeholder="Usuario" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" minlength="4" maxlength="20" required>
                                     </div>
                                     <div class="input-group mt-3">
                                         <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Contraseña: </label>
-                                        <input name="password" placeholder="Contraseña" type="password" class="form-control validate" id="password" value="" required>
+                                        <input name="password" placeholder="Contraseña" type="password" class="form-control validate" id="password" minlength="8" maxlength="30" required>
                                     </div>
                                     <br>
                                     <div class="input-group mt-3">

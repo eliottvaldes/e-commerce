@@ -6,10 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Melyz
- */
+
 public class SVerificarUsuario extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -47,6 +44,8 @@ public class SVerificarUsuario extends HttpServlet {
                 }
             }else{
                 //Si el usuario no exite o ingreso mal el nombre o la contraseña lo manda a una pagina de errores
+                HttpSession sesionFalse = request.getSession();
+                sesionFalse.invalidate();
                 response.sendRedirect("error.jsp");                
             }
         }

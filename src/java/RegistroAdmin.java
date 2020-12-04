@@ -119,8 +119,18 @@ public class RegistroAdmin extends HttpServlet {
                                             message = "<h1>La contraseña debe tener tener entre 6 y 15 caracteres</h1>\n";
                                         }else{
                                             System.out.println(id_usr);
-                                            String q = "insert into usuario values("+id_usr+", '"+name_usr+"', '"+appat_usr+"', '"+apmat_usr+"', '"+user_usr+"', '"+ema_usr+"', '"+pas_usr+"', "+priv_usr+")";
                                             
+                                            String part1 =user_usr.substring(0,2);
+                                            String part2 =pas_usr.substring(0,2);
+                                            String part3 =user_usr.substring(2,4);
+                                            String part4 =pas_usr.substring(2,4);
+                                            String part5 =pas_usr.substring(4,6);
+                                            String part6 =pas_usr.substring(6,8);
+                                            //llave de 16 caracteres para cifrar con aes de 128 bits
+                                            String key16 = part1+"?"+part5+part2.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+part6.toUpperCase()+"%";                                            
+                                            System.err.println("\nla llave para cifrar es: "+key16 + " y tiene una longitud de: "+key16.length()+" caracteres\n\n");                                                                                        
+                                                                                        
+                                            String q = "INSERT INTO usuario VALUES(" + id_usr + ",  AES_ENCRYPT('" + name_usr + "','" + key16 + "'),  AES_ENCRYPT('" + appat_usr + "','" + key16 + "'),  AES_ENCRYPT('" + apmat_usr + "','" + key16 + "'), '" + user_usr + "', AES_ENCRYPT('" + ema_usr + "','" + key16 + "'), AES_ENCRYPT('" + pas_usr + "','" + key16 + "'), " + priv_usr + ")";
                                             set.executeUpdate(q);
                                             message = "<h1 class=\"tm-block-title mt-3\">¡Administrador registrado!</h1>\n";
                                         }

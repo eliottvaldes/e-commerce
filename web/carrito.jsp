@@ -75,7 +75,7 @@
                     while (rs.next()) {
                         para = rs.getInt(1);
                     }
-                    System.out.println("El parametro que se asigno es: " + para);
+                    System.out.println("El parametro que se asigno para usuario es: " + para);
 
                     System.out.println("Si se va a agregar a CARRITO");
                     Statement set = con.createStatement();

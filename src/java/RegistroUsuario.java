@@ -134,7 +134,7 @@ public class RegistroUsuario extends HttpServlet {
                                             //posible llave de 32 caracteres para un cifrado aes de 264 bits
                                             //String key32 = part1+"?"+part2+"/"+part5.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+"¿"+part6.toUpperCase()+"%"+part1.toUpperCase()+"^"+part2.toUpperCase()+"!"+part3.toUpperCase()+"<"+part5+">"+part4;;                                                                                        
                                             
-                                            String q = "INSERT INTO usuario VALUES("+id_usr+", '"+name_usr+"', '"+appat_usr+"', '"+apmat_usr+"', AES_ENCRYPT('"+user_usr+"','"+key16+"'), AES_ENCRYPT('"+ema_usr+"','"+key16+"'), AES_ENCRYPT('"+pas_usr+"','"+key16+"'), "+priv_usr+")";                                            
+                                            String q = "INSERT INTO usuario VALUES(" + id_usr + ",  AES_ENCRYPT('" + name_usr + "','" + key16 + "'),  AES_ENCRYPT('" + appat_usr + "','" + key16 + "'),  AES_ENCRYPT('" + apmat_usr + "','" + key16 + "'), '" + user_usr + "', AES_ENCRYPT('" + ema_usr + "','" + key16 + "'), AES_ENCRYPT('" + pas_usr + "','" + key16 + "'), " + priv_usr + ")";
                                             
                                             set.executeUpdate(q);
                                             message = "<h2 class=\"tm-block-title mt-3\">¡Registro completado!</h2>\n"

@@ -19,6 +19,7 @@ public class SVerificarUsuario extends HttpServlet {
             user_usr = request.getParameter("username");
             pas_usr = request.getParameter("password");
             
+            
             Usuario u = new Usuario();
             
             u = u.verificarUsuario(user_usr, pas_usr);

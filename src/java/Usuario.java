@@ -102,9 +102,18 @@ public class Usuario {
         ResultSet rs = null;
         
         try{
-           cn = Conexion.getConexion();
-           String q;
-           q ="Select * from usuario where  user_usr = ? AND pas_usr = ?";
+            cn = Conexion.getConexion();
+            String q;
+            String part1 = user_usr.substring(0, 2);
+            String part2 = pas_usr.substring(0, 2);
+            String part3 = user_usr.substring(2, 4);
+            String part4 = pas_usr.substring(2, 4);
+            String part5 = pas_usr.substring(4, 6);
+            String part6 = pas_usr.substring(6, 8);
+            //llave de 16 caracteres para cifrar con aes de 128 bits
+            String key16 = part1 + "?" + part5 + part2.toUpperCase() + "#" + part4.toUpperCase() + "$" + part3 + part6.toUpperCase() + "%";            
+            
+            q = "Select * from usuario where  user_usr = ? AND pas_usr = aes_encrypt(?,'"+key16+"')";
            
            pr = cn.prepareStatement(q);
            pr.setString(1, user_usr);
@@ -123,7 +132,7 @@ public class Usuario {
                u.setEma_usr(rs.getString("ema_usr"));
                u.setPas_usr(rs.getString("pas_usr"));
                u.setPriv_usr(rs.getInt("priv_usr"));
-               
+               System.out.println("Si entra aquí");
                break;
            }
            

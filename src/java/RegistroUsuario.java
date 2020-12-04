@@ -86,7 +86,7 @@ public class RegistroUsuario extends HttpServlet {
                 }else{
                     pas_usr = pas1;
                     set = con.createStatement();
-                    rs = set.executeQuery("select * from usuario");
+                    rs = set.executeQuery("SELECT * FROM usuario");
                     boolean existe= false;
 
                     while(rs.next()){
@@ -122,14 +122,19 @@ public class RegistroUsuario extends HttpServlet {
                                                     + "<a href=\"singup.html\">Da click aqui e intentalo de nuevo</a>\n";
                                         }else{
                                             
-                                            String part1 =user_usr.substring(0,4);
-                                            String part2 =pas_usr.substring(0,4);
-                                            String key = part1+part2+part1+part2;
-                                            System.out.println(key);
-                                            System.out.println("La longitud de la clave para encreptar es: "+key.length());                                            
-                                            String passwordEncrypted = "AES_ENCRYPT("+pas_usr+",'"+key+"')";
+                                            String part1 =user_usr.substring(0,2);
+                                            String part2 =pas_usr.substring(0,2);
+                                            String part3 =user_usr.substring(2,4);
+                                            String part4 =pas_usr.substring(2,4);
+                                            String part5 =pas_usr.substring(4,6);
+                                            String part6 =pas_usr.substring(6,8);
+                                            //llave de 16 caracteres para cifrar con aes de 128 bits
+                                            String key16 = part1+"?"+part5+part2.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+part6.toUpperCase()+"%";                                            
+                                            System.err.println("\nla llave para cifrar es: "+key16 + " y tiene una longitud de: "+key16.length()+" caracteres\n\n");                                            
+                                            //posible llave de 32 caracteres para un cifrado aes de 264 bits
+                                            //String key32 = part1+"?"+part2+"/"+part5.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+"¿"+part6.toUpperCase()+"%"+part1.toUpperCase()+"^"+part2.toUpperCase()+"!"+part3.toUpperCase()+"<"+part5+">"+part4;;                                                                                        
                                             
-                                            String q = "insert into usuario values("+id_usr+", '"+name_usr+"', '"+appat_usr+"', '"+apmat_usr+"', '"+user_usr+"', '"+ema_usr+"', '"+passwordEncrypted+"', "+priv_usr+")";                                            
+                                            String q = "INSERT INTO usuario VALUES("+id_usr+", '"+name_usr+"', '"+appat_usr+"', '"+apmat_usr+"', AES_ENCRYPT('"+user_usr+"','"+key16+"'), AES_ENCRYPT('"+ema_usr+"','"+key16+"'), AES_ENCRYPT('"+pas_usr+"','"+key16+"'), "+priv_usr+")";                                            
                                             
                                             set.executeUpdate(q);
                                             message = "<h2 class=\"tm-block-title mt-3\">¡Registro completado!</h2>\n"

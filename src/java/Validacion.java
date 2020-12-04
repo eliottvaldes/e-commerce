@@ -62,7 +62,7 @@ public class Validacion {
                 valus = true;
             } else {
                 for (int i = 0; i < userName.length(); i++) {
-                    if (userName.charAt(i) == ' ' && userName.charAt(i + 1) == ' ') {
+                    if (userName.charAt(i) == ' ') {
                         valus = false;
                         break;
                     }
@@ -77,11 +77,11 @@ public class Validacion {
     boolean valpass;
 
     public Boolean validarPass(String password) {
-        pa = Pattern.compile("[a-z¬ñA-Z¬Ñ\\s0-9!#$%&/.,-_^*]{1,30}");
+        pa = Pattern.compile("[a-z¬ñA-Z¬Ñ0-9!#$%&/.,-_^*]{1,30}");
         ma = pa.matcher(password);
         if (ma.matches()) {
             valpass = true;
-            if (password.length() >= 4 && password.length() < 20) {
+            if (password.length() >= 8 && password.length() < 20) {
                 valpass = true;
             } else {
                 for (int i = 0; i < password.length(); i++) {

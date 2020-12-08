@@ -83,17 +83,29 @@
                     int art = Integer.parseInt(request.getParameter("art"));
                     int quantity = Integer.parseInt(request.getParameter("cantidad"));
 
-                    String sql = "insert into carrito.cart (id_user, id_arti, count_arti) "
-                            + "values (" + para + "," + art + "," + quantity + ")";
+                    String sql = "SELECT COUNT(*) AS total FROM cart WHERE id_arti=" + art + " AND " + "id_user=" + para;
+                    rs = set.executeQuery(sql);
+                    
+                    while (rs.next()) {
+                        if (rs.getInt(1) == 0) {
+                            sql = "insert into carrito.cart (id_user, id_arti, count_arti) "
+                                    + "values (" + para + "," + art + "," + quantity + ")";
+                        } else {
+                            sql = "update cart set count_arti = count_arti + " + quantity + " WHERE id_arti=" + art
+                                    + " AND " + "id_user=" + para;
+                        }
+                    }
+                    
+                    set.executeUpdate(sql);
                     System.out.println("El usuario que agrego a carrito fue: " + usuario);
                     System.out.println("Los datos fueron: " + sql);
-                    int val = set.executeUpdate(sql);
 
-                    request.getRequestDispatcher("dis_cart.jsp").forward(request, response);
-
+                    set.close();
                     rs.close();
                     st.close();
                     con.close();
+
+                    request.getRequestDispatcher("dis_cart.jsp").forward(request, response);
 
                 } catch (SQLException ex) {
                     System.out.println("carrito no furula xd");

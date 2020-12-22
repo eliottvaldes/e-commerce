@@ -79,6 +79,7 @@
                                         <a class="dropdown-item" href="eliCuenta.jsp">Eliminar cuenta</a>
                                     </div>
                             </li>
+                            <!--
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
@@ -88,6 +89,7 @@
                                     <a class="dropdown-item" href="chooseTicket.jsp">Consultar ventas (Tickets)</a>
                                 </div>
                             </li>
+                            -->
                         </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item">

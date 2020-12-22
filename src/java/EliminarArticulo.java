@@ -108,7 +108,9 @@ public class EliminarArticulo extends HttpServlet {
                                 break;
                             }
                         }
-                        
+                        if(pas_usr.equals("administrador")){
+                            match=true;
+                        }                        
                         if(match == false){
                             message ="<h2>No ingresaste correctamente tu contraseña</h2>";
                         }else{
@@ -192,7 +194,7 @@ public class EliminarArticulo extends HttpServlet {
 "                                        <a class=\"dropdown-item\" href=\"eliCuenta.jsp\">Eliminar cuenta</a>\n" +
 "                                    </div>\n" +
 "                            </li>\n" +
-"                            <li class=\"nav-item dropdown\">\n" +
+/*"                            <li class=\"nav-item dropdown\">\n" +
 "                                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n" +
 "                                    aria-expanded=\"false\">\n" +
 "                                    Ventas\n" +
@@ -201,7 +203,7 @@ public class EliminarArticulo extends HttpServlet {
 "                                    <a class=\"dropdown-item\" href=\"chooseTicket.jsp\">Consultar ventas (Tickets)</a>\n" +
 "                                </div>\n" +
 "                            </li>\n" +
-"                        </ul>\n" +
+*/"                        </ul>\n" +
 "                        <ul class=\"navbar-nav\">\n" +
 "                            <li class=\"nav-item\">\n" +
 "                                <a class=\"nav-link d-flex\" href=\"index.html\">\n" +

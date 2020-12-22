@@ -142,7 +142,7 @@ public class NuevoArticulo extends HttpServlet {
 "                                        <a class=\"dropdown-item\" href=\"eliCuenta.jsp\">Eliminar cuenta</a>\n" +
 "                                    </div>\n" +
 "                            </li>\n" +
-"                            <li class=\"nav-item dropdown\">\n" +
+/*"                            <li class=\"nav-item dropdown\">\n" +
 "                                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n" +
 "                                    aria-expanded=\"false\">\n" +
 "                                    Ventas\n" +
@@ -151,7 +151,7 @@ public class NuevoArticulo extends HttpServlet {
 "                                    <a class=\"dropdown-item\" href=\"chooseTicket.jsp\">Consultar ventas (Tickets)</a>\n" +
 "                                </div>\n" +
 "                            </li>\n" +
-"                        </ul>\n" +
+*/"                        </ul>\n" +
 "                        <ul class=\"navbar-nav\">\n" +
 "                            <li class=\"nav-item\">\n" +
 "                                <a class=\"nav-link d-flex\" href=\"index.html\">\n" +

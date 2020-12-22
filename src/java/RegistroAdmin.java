@@ -211,7 +211,7 @@ public class RegistroAdmin extends HttpServlet {
 "                                        <a class=\"dropdown-item\" href=\"eliCuenta.jsp\">Eliminar cuenta</a>\n" +
 "                                    </div>\n" +
 "                            </li>\n" +
-"                            <li class=\"nav-item dropdown\">\n" +
+/*"                            <li class=\"nav-item dropdown\">\n" +
 "                                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"\n" +
 "                                    aria-expanded=\"false\">\n" +
 "                                    Ventas\n" +
@@ -220,7 +220,7 @@ public class RegistroAdmin extends HttpServlet {
 "                                    <a class=\"dropdown-item\" href=\"#\">Consultar ventas totales</a>\n"+
 "                                </div>\n" +
 "                            </li>\n" +
-"                        </ul>\n" +
+*/"                        </ul>\n" +
 "                        <ul class=\"navbar-nav\">\n" +
 "                            <li class=\"nav-item\">\n" +
 "                                <a class=\"nav-link d-flex\" href=\"index.html\">\n" +

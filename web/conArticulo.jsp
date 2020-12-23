@@ -127,7 +127,7 @@
                             while (rs.next()) {
                                 
                                 String wc="";
-                                if(rs.getString("wts_art").length()<10){
+                                if(rs.getString("wts_art") == null || rs.getString("wts_art").length()<10){
                                     wc="fa fa-times";
                                 }else{
                                     wc="fa fa-check";

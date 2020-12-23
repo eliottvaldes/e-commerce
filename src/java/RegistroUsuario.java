@@ -129,8 +129,9 @@ public class RegistroUsuario extends HttpServlet {
                                             String part5 =pas_usr.substring(4,6);
                                             String part6 =pas_usr.substring(6,8);
                                             //llave de 16 caracteres para cifrar con aes de 128 bits
-                                            String key16 = part1+"?"+part5+part2.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+part6.toUpperCase()+"%";                                            
-                                            System.err.println("\nla llave para cifrar es: "+key16 + " y tiene una longitud de: "+key16.length()+" caracteres\n\n");                                            
+                                            //String key16 = part1+"?"+part5+part2.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+part6.toUpperCase()+"%";                                            
+                                            String key16="8$m@S4@7g8Tv&#Za";
+                                            //System.err.println("\nla llave para cifrar es: "+key16 + " y tiene una longitud de: "+key16.length()+" caracteres\n\n");                                            
                                             //posible llave de 32 caracteres para un cifrado aes de 264 bits
                                             //String key32 = part1+"?"+part2+"/"+part5.toUpperCase()+"#"+part4.toUpperCase()+"$"+part3+"¿"+part6.toUpperCase()+"%"+part1.toUpperCase()+"^"+part2.toUpperCase()+"!"+part3.toUpperCase()+"<"+part5+">"+part4;;                                                                                        
                                             

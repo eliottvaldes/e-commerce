@@ -1,4 +1,3 @@
-
 <%@page language="java" import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -9,20 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Consultar Cuentas</title>
-    <!--
-
-    Template 2108 Dashboard
-
-	http://www.tooplate.com/view/2108-dashboard
-
-    -->
+    <link rel="icon" type="image/png" href="assets/images/icon.png" sizes="192x192">
+    <title>Consultar Cuentas</title>   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
-    <!-- https://fonts.google.com/specimen/Open+Sans -->
     <link rel="stylesheet" href="css/fontawesome.min.css">
-    <!-- https://fontawesome.com/ -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="css/tooplate.css">
 </head>
 
@@ -48,7 +38,7 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-xl navbar-light bg-light">
                     <a class="navbar-brand" href="dashboard.jsp">
-                        <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
+                        <i class="fas fa-3x fa-user-astronaut tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Dashboard</h1>
                     </a>
                     <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -68,9 +58,7 @@
                                         aria-expanded="false">Articulos</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="conArticulo.jsp">Consultar articulos</a>
-                                        <a class="dropdown-item" href="addArticulo.jsp">Agregar articulos</a>
-                                        <a class="dropdown-item" href="modArticulo.jsp">Modificar articulos</a>
-                                        <a class="dropdown-item" href="eliArticulo.jsp">Eliminar articulos</a>
+                                        <a class="dropdown-item" href="addArticulo.jsp">Agregar articulos</a>                                       
                                     </div>
                                 </li>
 
@@ -84,23 +72,12 @@
                                         <a class="dropdown-item" href="eliCuenta.jsp">Eliminar cuenta</a>
                                     </div>
                             </li>
-                            <!--
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Ventas
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="chooseTicket.jsp">Consultar ventas (Tickets)</a>
-                                </div>
-                            </li>
-                            -->
                         </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link d-flex" href="index.html">
-                                    <i class="far fa-user mr-2 tm-logout-icon"></i>
-                                    <span>Salir</span>
+                                <a class="nav-link d-flex" href="LogOut">
+                                    <i class="fa fa-sign-out-alt mr-2 tm-logout-icon"></i> 
+                                    <span>Salir</span>                                     
                                 </a>
                             </li>
                         </ul>
@@ -133,6 +110,7 @@
                             Connection cn = null;
                             Statement st = null;
                             ResultSet rs = null;
+                            String pass="8$m@S4@7g8Tv&#Za";
                             try{
                                 String url = "jdbc:mysql://localhost:3306/carrito?user=root&password=n0m3l0";
                                 int i = 1;
@@ -142,7 +120,7 @@
                                 System.out.println("Sihubobase");
 
                                 st = cn.createStatement();
-                                String q = "Select * from usuario order by id_usr ASC";
+                                String q = "Select id_usr, AES_DECRYPT(name_usr,'"+pass+"'), AES_DECRYPT(appat_usr,'"+pass+"'), AES_DECRYPT(apmat_usr,'"+pass+"'), AES_DECRYPT(ema_usr,'"+pass+"'), user_usr, priv_usr  from usuario order by id_usr ASC";
                                 rs = st.executeQuery(q);
 
                                 while(rs.next()){
@@ -159,10 +137,10 @@
                               <td><%=rs.getInt("id_usr")%> 
 
                               </td>
-                              <td><%=(rs.getString("name_usr")+" "+rs.getString("appat_usr")+" "+rs.getString("apmat_usr"))%> 
+                              <td><%=(rs.getString("AES_DECRYPT(name_usr,'"+pass+"')")+" "+rs.getString("AES_DECRYPT(appat_usr,'"+pass+"')")+" "+rs.getString("AES_DECRYPT(apmat_usr,'"+pass+"')"))%> 
 
                               </td>
-                              <td ><%=rs.getString("ema_usr")%> 
+                              <td ><%=rs.getString("AES_DECRYPT(ema_usr,'"+pass+"')")%> 
 
                               </td>
                               <td><%=rs.getString("user_usr")%> 
@@ -180,10 +158,10 @@
                               <td><%=rs.getInt("id_usr")%> 
 
                               </td>
-                              <td><%=(rs.getString("name_usr")+" "+rs.getString("appat_usr")+" "+rs.getString("apmat_usr"))%> 
+                              <td><%=(rs.getString("AES_DECRYPT(name_usr,'"+pass+"')")+" "+rs.getString("AES_DECRYPT(appat_usr,'"+pass+"')")+" "+rs.getString("AES_DECRYPT(apmat_usr,'"+pass+"')"))%> 
 
                               </td>
-                              <td ><%=rs.getString("ema_usr")%> 
+                              <td ><%=rs.getString("AES_DECRYPT(ema_usr,'"+pass+"')")%> 
 
                               </td>
                               <td><%=rs.getString("user_usr")%> 
@@ -191,7 +169,7 @@
                               </td>
                               <td><%=tipo%> 
                               </td>
-                          </tr>  
+                          </tr>
 
                          <%         }
                               i++;

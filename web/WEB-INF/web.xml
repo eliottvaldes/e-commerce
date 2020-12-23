@@ -33,18 +33,6 @@
         <servlet-class>EliminarUsuario</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EliminarArticulo</servlet-name>
-        <servlet-class>EliminarArticulo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ModificarArticulo</servlet-name>
-        <servlet-class>ModificarArticulo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>VerTicket</servlet-name>
-        <servlet-class>VerTicket</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>EliminarTicket</servlet-name>
         <servlet-class>EliminarTicket</servlet-class>
     </servlet>
@@ -91,18 +79,6 @@
     <servlet-mapping>
         <servlet-name>EliminarUsuario</servlet-name>
         <url-pattern>/EliminarUsuario</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EliminarArticulo</servlet-name>
-        <url-pattern>/EliminarArticulo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ModificarArticulo</servlet-name>
-        <url-pattern>/ModificarArticulo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>VerTicket</servlet-name>
-        <url-pattern>/VerTicket</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EliminarTicket</servlet-name>

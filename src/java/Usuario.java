@@ -1,8 +1,3 @@
-/**
- *
- * @author Melyz
- */
-
 /*Aqui se proporcionan los datos de la BD de una respectiva tabla 
 y aqui mismo van a estar los metodos que se encargan del funcionamiento
 y operación del usuario con respecto a la tabla*/
@@ -111,8 +106,8 @@ public class Usuario {
             String part5 = pas_usr.substring(4, 6);
             String part6 = pas_usr.substring(6, 8);
             //llave de 16 caracteres para cifrar con aes de 128 bits
-            String key16 = part1 + "?" + part5 + part2.toUpperCase() + "#" + part4.toUpperCase() + "$" + part3 + part6.toUpperCase() + "%";            
-            
+            //String key16 = part1 + "?" + part5 + part2.toUpperCase() + "#" + part4.toUpperCase() + "$" + part3 + part6.toUpperCase() + "%";            
+            String key16="8$m@S4@7g8Tv&#Za";
             q = "Select * from usuario where  user_usr = ? AND pas_usr = aes_encrypt(?,'"+key16+"')";
            
            pr = cn.prepareStatement(q);

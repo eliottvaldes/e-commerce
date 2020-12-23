@@ -1,7 +1,3 @@
-/**
- *
- * @author Melyz
- */
 import java.sql.*;
 
 public class Conexion {

@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -19,10 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Melyz
- */
 public class productSelected extends HttpServlet {
 
     private Connection con = null;
@@ -90,7 +80,7 @@ public class productSelected extends HttpServlet {
                     imagen = rs.getString("img_art");
                     prc = rs.getFloat("prc_art");
                     art = rs.getString("id_art");
-                    if (rs.getString("wts_art") == null) {
+                    if (rs.getString("wts_art") == null || rs.getString("wts_art").length()<10) {
                         type = "hidden";
                         link = "";
                     } else {
